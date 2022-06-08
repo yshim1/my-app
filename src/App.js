@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import data from "./data.json";
 
-function App() {
+const App = () =>{
+  const [client, setClient] = useState(data);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className = "app">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Age</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {client.map((client) => (
+          <tr>
+            <td>{client.id}</td>
+            <td>{client.age}</td>
+            <td>{client.name}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
   );
-}
+};
 
 export default App;
