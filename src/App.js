@@ -18,7 +18,9 @@ const App = () =>{
       <tbody>
         {client.map((client) => (
           <tr>
+            <a href = "additionalinfo">
             <td>{client.id}</td>
+            </a>
             <td>{client.age}</td>
             <td>{client.name}</td>
           </tr>
